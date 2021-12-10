@@ -39,26 +39,27 @@ def wordCount(listword):
     
 # End of Func().
     
-def display(*kwargs):
-    
+def display(*text_data):
     
     print(f"""
     Output:
     
-    The sentence: \"{u_sentence}\" with a length of {len(u_sentence)}
-    The word count:{words}
-    The consonants:{consonants}
-    The vowels: {vowels}
+    The sentence: \"{text_data[0]}\" with a length of {len(text_data[0])}
+    The word count:{text_data[1]}
+    The consonants:{text_data[2]}
+    The vowels: {text_data[3]}
     """)
 # End of Func().
     
 def main():
     u_sentence = input("Type a sentence: ")
+    if u_sentence == "":
+        raise ValueError("There is no input. Please try again.")
     list_word = u_sentence.split(" ")
     consonants = consntCount(u_sentence)
     vowels = vowelCount(u_sentence)
     words = wordCount(list_word)
-    display(u_sentence, consonants, vowels, words)
+    display(u_sentence, words, consonants, vowels)
     
 # End of Func().   
     
