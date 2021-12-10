@@ -9,7 +9,6 @@ Subject: Programming Logic and Design - HOMEWORK 07
 def capsValid(u_code):
     caps = filter((lambda x: x.isupper()), u_code)
     if len(list(caps)) > 0:
-        print("caps valid")
         return True
     else:
         return False
@@ -17,7 +16,6 @@ def capsValid(u_code):
     
 def charLenValid(u_code):
     if len(list(u_code)) > 15:
-        print("charlenvalid")
         return True
     else:
         return False
@@ -26,7 +24,6 @@ def charLenValid(u_code):
 def numValid(u_code):
     nums = filter((lambda x: x.isnumeric()), u_code)
     if len(list(nums)) > 0:
-        print("numvalid")
         return True
     else:
         return False
@@ -35,7 +32,14 @@ def numValid(u_code):
 def speCharValid(iterator):
     
     SPEC_CHARS = "~!@#$%^&*()_+[]\;',./{}|:<>?()"
-
+    
+    for i in range(len(iterator)):
+        for j in range(len(SPEC_CHARS)):
+            if iterator[i] == SPEC_CHARS[j]:
+                return True
+            else:
+                pass
+    return False
     
 def display(validity):
     if validity == True:
@@ -48,7 +52,14 @@ def main():
     u_validity = False
     
     passcode = str(input("Enter a passphrase for validity: "))
-
+    caps_valid = capsValid(passcode)
+    num_valid = numValid(passcode)
+    spec_char_valid = speCharValid(passcode)
+    char_len_valid = charLenValid(passcode)
+    if caps_valid and  num_valid and  spec_char_valid and char_len_valid:
+        u_validity = True
+    print(u_validity)
+    display(u_validity)
 # End of Func().
 
 
