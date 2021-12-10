@@ -8,10 +8,11 @@ Subject: Programming Logic and Design - HOMEWORK 07
 def vowelCount(sentence):
     
     count = 0
-    for i in len(sentence):
+    for i in range(len(sentence)):
         for listvowel in "aeiou":
             if sentence[i] == listvowel:
                 count += 1
+    print(count)
 # End of Func().    
 
 def consntCount(sentence):
@@ -29,23 +30,23 @@ def display():
 def main():
     u_sentence = input("Type a sentence: ")
     list_word = u_sentence.split(" ")
-    consonants = consntCount(u_sentence)
+    # consonants = consntCount(u_sentence)
     vowels = vowelCount(u_sentence)
-    words = wordCount(list_word)
-    display(u_sentence, consonants, vowels, words)
+    # words = wordCount(list_word)
+    # display(u_sentence, consonants, vowels, words)
     
 # End of Func().   
     
 
-# # while True: # My template for usual main().
-    # # main()
-    # # quit = input("Quit (y/n): ")
-    # # if quit is type(str):
-        # # quit = quit.lower()
-        # # print(quit)
-    # # if (quit == 'y' or quit == 0):
-        # # print("Closing...\n")    
-        # # break
-# # # End of main()
+while True: # My template for usual main().
+    main()
+    quit = input("Quit (y/n): ")
+    if quit is type(str):
+        quit = quit.lower()
+        print(quit)
+    if (quit == 'y' or quit == 0):
+        print("Closing...\n")    
+        break
+# End of main()
 
-# # exit() # Exits python.
+exit() # Exits python.
