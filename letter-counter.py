@@ -8,32 +8,57 @@ Subject: Programming Logic and Design - HOMEWORK 07
 def vowelCount(sentence):
     
     count = 0
+    
     for i in range(len(sentence)):
         for listvowel in "aeiou":
             if sentence[i] == listvowel:
                 count += 1
-    print(count)
+    return count
+    
 # End of Func().    
 
 def consntCount(sentence):
-    print("Calculates counted consonants.")
+    
+    count = 0
+    
+    for i in range(len(sentence)):
+        for listvowel in "bcdfghjklmnpqrstvwxyz":
+            if sentence[i] == listvowel:
+                count += 1
+    return count
+    
 # End of Func().
     
-def wordCount(sentence):
-    print("Calculates counted words.")
+def wordCount(listword):
+    
+    count = 0
+    
+    for i in range(len(listword)):
+        count += 1
+    return count
+    
 # End of Func().
     
-def display():
-    print("Displays counters.")
+def display(*kwargs):
+    
+    
+    print(f"""
+    Output:
+    
+    The sentence: \"{u_sentence}\" with a length of {len(u_sentence)}
+    The word count:{words}
+    The consonants:{consonants}
+    The vowels: {vowels}
+    """)
 # End of Func().
     
 def main():
     u_sentence = input("Type a sentence: ")
     list_word = u_sentence.split(" ")
-    # consonants = consntCount(u_sentence)
+    consonants = consntCount(u_sentence)
     vowels = vowelCount(u_sentence)
-    # words = wordCount(list_word)
-    # display(u_sentence, consonants, vowels, words)
+    words = wordCount(list_word)
+    display(u_sentence, consonants, vowels, words)
     
 # End of Func().   
     
