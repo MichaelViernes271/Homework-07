@@ -5,26 +5,36 @@ Submission date: December 4, 2021
 Subject: Programming Logic and Design - HOMEWORK 07
 """
 
-def vowelCount():
-    print("Calculates counted vowels.")
+def vowelCount(sentence):
     
-def consntCount():
+    count = 0
+    for i in len(sentence):
+        for listvowel in "aeiou":
+            if sentence[i] == listvowel:
+                count += 1
+# End of Func().    
+
+def consntCount(sentence):
     print("Calculates counted consonants.")
+# End of Func().
     
-def wordCount():
+def wordCount(sentence):
     print("Calculates counted words.")
-    
-def userInput():
-    print("Asks user input.")
+# End of Func().
     
 def display():
     print("Displays counters.")
+# End of Func().
     
 def main():
-    print("Main Function.")
+    u_sentence = input("Type a sentence: ")
+    list_word = u_sentence.split(" ")
+    consonants = consntCount(u_sentence)
+    vowels = vowelCount(u_sentence)
+    words = wordCount(list_word)
+    display(u_sentence, consonants, vowels, words)
     
-    
-    
+# End of Func().   
     
 
 # # while True: # My template for usual main().
