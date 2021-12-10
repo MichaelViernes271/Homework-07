@@ -6,38 +6,52 @@ Subject: Programming Logic and Design - HOMEWORK 07
 """
 
 
-def capsValid():
-    print("Validates Capital letters.")
+def capsValid(u_code):
+    caps = filter((lambda x: x.isupper()), u_code)
+
+    # print("Validates Capital letters.")
     
-def charLenValid():
-    print("Validates character length.")
+def charLenValid(u_code):
+    if len(list(u_code)) > 15:
+        print("charlenvalid")
+        return True
+
+    # print("Validates character length.")
     
-def numValid():
-    print("Validates digits.")
+def numValid(u_code):
+    nums = filter((lambda x: x.isnumeric()), u_code)
+
+    # print("Validates digits.")
+
+def speCharValid(iterator):
     
-def speCharValid():
-    print("Validates special characters.")
+    SPEC_CHARS = "~!@#$%^&*()_+[]\;',./{}|:<>?()"
+
     
-def display():
-    print("Displays the result.")
-    
-def userInput():
-    print("Asks user input.")
+def display(validity):
+    if validity == True:
+        print("The Password is VALID.")
+    else:
+        print("The Password is INVALID.")
     
 def main():
-    print("Executes program flow.")
     
+    u_validity = False
+    
+    passcode = str(input("Enter a passphrase for validity: "))
+
+# End of Func().
 
 
-# # while True: # My template for usual main().
-    # # main()
-    # # quit = input("Quit (y/n): ")
-    # # if quit is type(str):
-        # # quit = quit.lower()
-        # # print(quit)
-    # # if (quit == 'y' or quit == 0):
-        # # print("Closing...\n")    
-        # # break
-# # # End of main()
+while True: # My template for usual main().
+    main()
+    quit = input("Quit (y/n): ")
+    if quit is type(str):
+        quit = quit.lower()
+        print(quit)
+    if (quit == 'y' or quit == 0):
+        print("Closing...\n")    
+        break
+# End of main()
 
-# # exit() # Exits python.
+exit() # Exits python.
