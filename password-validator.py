@@ -8,19 +8,28 @@ Subject: Programming Logic and Design - HOMEWORK 07
 
 def capsValid(u_code):
     caps = filter((lambda x: x.isupper()), u_code)
-
+    if len(list(caps)) > 0:
+        print("caps valid")
+        return True
+    else:
+        return False
     # print("Validates Capital letters.")
     
 def charLenValid(u_code):
     if len(list(u_code)) > 15:
         print("charlenvalid")
         return True
-
+    else:
+        return False
     # print("Validates character length.")
     
 def numValid(u_code):
     nums = filter((lambda x: x.isnumeric()), u_code)
-
+    if len(list(nums)) > 0:
+        print("numvalid")
+        return True
+    else:
+        return False
     # print("Validates digits.")
 
 def speCharValid(iterator):
